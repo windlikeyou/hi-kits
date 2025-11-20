@@ -1,14 +1,14 @@
-{
-  "name": "@hi-kits/styles",
+  {
+  "name": "@moonwind-ui/styles",
   "version": "1.0.0",
-  "description": "Hi-Kits design system styles and tokens",
+  "description": "Moonwind-UI design system styles and tokens",
   "main": "dist/index.css",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
-  ],
+],
   "scripts": {
     "build": "vite build && npx tsc --project tsconfig.build.json",
     "dev": "vite build --watch"

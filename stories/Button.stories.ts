@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import HkButton from './Button.vue'
+import { MButton } from '@moonwind-ui/components'
 
-const meta: Meta<typeof HkButton> = {
+const meta: Meta<typeof MButton> = {
   title: 'Components/Button',
-  component: HkButton,
+  component: MButton,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Hi-Kits 按钮组件，支持多种类型、尺寸和状态。'
+        component: 'Moonwind-UI 按钮组件，支持多种类型、尺寸和状态'
       }
     }
   },
@@ -30,7 +30,7 @@ const meta: Meta<typeof HkButton> = {
     },
     loading: {
       control: { type: 'boolean' },
-      description: '是否加载中'
+      description: '是否加载'
     },
     onClick: { action: 'clicked' }
   },
@@ -45,52 +45,52 @@ type Story = StoryObj<typeof meta>
 // 默认按钮
 export const Default: Story = {
   render: () => ({
-    components: { HkButton },
-    template: '<HkButton>Default Button</HkButton>'
+    components: { MButton },
+    template: '<MButton>Default Button</MButton>'
   })
 }
 
 // 主要按钮
 export const Primary: Story = {
   render: () => ({
-    components: { HkButton },
-    template: '<HkButton type="primary">Primary Button</HkButton>'
+    components: { MButton },
+    template: '<MButton type="primary">Primary Button</MButton>'
   })
 }
 
 // 成功按钮
 export const Success: Story = {
   render: () => ({
-    components: { HkButton },
-    template: '<HkButton type="success">Success Button</HkButton>'
+    components: { MButton },
+    template: '<MButton type="success">Success Button</MButton>'
   })
 }
 
 // 警告按钮
 export const Warning: Story = {
   render: () => ({
-    components: { HkButton },
-    template: '<HkButton type="warning">Warning Button</HkButton>'
+    components: { MButton },
+    template: '<MButton type="warning">Warning Button</MButton>'
   })
 }
 
 // 危险按钮
 export const Danger: Story = {
   render: () => ({
-    components: { HkButton },
-    template: '<HkButton type="danger">Danger Button</HkButton>'
+    components: { MButton },
+    template: '<MButton type="danger">Danger Button</MButton>'
   })
 }
 
 // 不同尺寸
 export const Sizes: Story = {
   render: () => ({
-    components: { HkButton },
+    components: { MButton },
     template: `
       <div style="display: flex; gap: 16px; align-items: center;">
-        <HkButton size="small">Small</HkButton>
-        <HkButton size="medium">Medium</HkButton>
-        <HkButton size="large">Large</HkButton>
+        <MButton size="small">Small</MButton>
+        <MButton size="medium">Medium</MButton>
+        <MButton size="large">Large</MButton>
       </div>
     `
   })
@@ -99,12 +99,12 @@ export const Sizes: Story = {
 // 禁用状态
 export const Disabled: Story = {
   render: () => ({
-    components: { HkButton },
+    components: { MButton },
     template: `
       <div style="display: flex; gap: 16px; align-items: center;">
-        <HkButton disabled>Default Disabled</HkButton>
-        <HkButton type="primary" disabled>Primary Disabled</HkButton>
-        <HkButton type="success" disabled>Success Disabled</HkButton>
+        <MButton disabled>Default Disabled</MButton>
+        <MButton type="primary" disabled>Primary Disabled</MButton>
+        <MButton type="success" disabled>Success Disabled</MButton>
       </div>
     `
   })
@@ -113,12 +113,12 @@ export const Disabled: Story = {
 // 加载状态
 export const Loading: Story = {
   render: () => ({
-    components: { HkButton },
+    components: { MButton },
     template: `
       <div style="display: flex; gap: 16px; align-items: center;">
-        <HkButton loading>Loading</HkButton>
-        <HkButton type="primary" loading>Primary Loading</HkButton>
-        <HkButton type="success" loading>Success Loading</HkButton>
+        <MButton loading>Loading</MButton>
+        <MButton type="primary" loading>Primary Loading</MButton>
+        <MButton type="success" loading>Success Loading</MButton>
       </div>
     `
   })
@@ -127,15 +127,15 @@ export const Loading: Story = {
 // 所有类型展示
 export const AllTypes: Story = {
   render: () => ({
-    components: { HkButton },
+    components: { MButton },
     template: `
       <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-        <HkButton>Default</HkButton>
-        <HkButton type="primary">Primary</HkButton>
-        <HkButton type="secondary">Secondary</HkButton>
-        <HkButton type="success">Success</HkButton>
-        <HkButton type="warning">Warning</HkButton>
-        <HkButton type="danger">Danger</HkButton>
+        <MButton>Default</MButton>
+        <MButton type="primary">Primary</MButton>
+        <MButton type="secondary">Secondary</MButton>
+        <MButton type="success">Success</MButton>
+        <MButton type="warning">Warning</MButton>
+        <MButton type="danger">Danger</MButton>
       </div>
     `
   })
@@ -144,8 +144,8 @@ export const AllTypes: Story = {
 // 交互示例
 export const Interactive: Story = {
   render: () => ({
-    components: { HkButton },
-    template: '<HkButton type="primary" @click="handleClick">Click me!</HkButton>',
+    components: { MButton },
+    template: '<MButton type="primary" @click="handleClick">Click me!</MButton>',
     methods: {
       handleClick() {
         alert('Button clicked!')

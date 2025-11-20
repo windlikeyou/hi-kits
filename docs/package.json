@@ -1,14 +1,14 @@
-{
+  {
   "name": "docs",
   "version": "1.0.0",
-  "description": "Hi-Kits documentation site",
+  "description": "Moonwind-UI documentation site",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
-  },
+},
   "devDependencies": {
     "@vitepress-demo-preview/component": "^2.5.2",
     "@vitepress-demo-preview/plugin": "^1.4.1",
@@ -16,6 +16,8 @@
     "vue": "^3.4.15"
   },
   "dependencies": {
-    "hi-kits": "workspace:*"
+    "ag-grid-community": "^34.3.0",
+    "ag-grid-vue3": "^34.3.0",
+    "moonwind-ui": "workspace:*"
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <HiDataGrid
+  <MDataGrid
     :columns="columns"
     :data-source="dataSource"
     height="500px"
@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { HiDataGrid } from 'hi-kits'
-import type { DataGridColumn } from 'hi-kits'
+import { MDataGrid } from 'moonwind-ui'
+import type { DataGridColumn } from 'moonwind-ui'
 
 interface User {
   id: number
@@ -51,7 +51,7 @@ const dataSource: User[] = [
     email: 'lisi@example.com',
     age: 30,
     salary: 12000,
-    department: '产品部'
+    department: '产品部'      
   },
   {
     id: 3,

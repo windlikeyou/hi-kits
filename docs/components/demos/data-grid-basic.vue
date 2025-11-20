@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <HiDataGrid
+    <MDataGrid
       :columns="columns"
       :data-source="dataSource"
       height="400px"
@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { HiDataGrid } from 'hi-kits'
-import type { DataGridColumn } from 'hi-kits'
+import { MDataGrid } from 'moonwind-ui'
+import type { DataGridColumn } from 'moonwind-ui'
 
 interface User {
   id: number

@@ -1,12 +1,11 @@
 import type { Preview } from '@storybook/vue3'
 import { setup } from '@storybook/vue3'
-import HiKits from '../packages/hi-kits/src/index'
-import '../packages/hi-kits/dist/style.css'
+import MoonwindUI from '../packages/moonwind-ui/src'
+import '../packages/moonwind-ui/src/style'
 
 // 设置 Vue 应用
 setup((app) => {
-  // 这里可以添加全局插件、指令等
-  app.use(HiKits)
+  app.use(MoonwindUI)
 })
 
 const preview: Preview = {
@@ -19,7 +18,7 @@ const preview: Preview = {
       }
     },
     docs: {
-      extractComponentDescription: (_: any, { notes }: {notes: any}) => {
+      extractComponentDescription: (_: any, { notes }: { notes: any }) => {
         if (notes) {
           return typeof notes === 'string' ? notes : notes.markdown || notes.text
         }

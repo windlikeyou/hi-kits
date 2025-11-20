@@ -1,8 +1,8 @@
-import { describe, it, expect, beforeAll } from 'vitest'
+﻿import { describe, it, expect, beforeAll } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
-import { HkDataGrid } from 'hi-kits'
-import type { DataGridColumn } from 'hi-kits'
+import { MDataGrid } from 'moonwind-ui'
+import type { DataGridColumn } from 'moonwind-ui'
 
 interface User {
   id: number
@@ -15,15 +15,15 @@ interface User {
 // 提供 ResizeObserver 的简单 polyfill，避免在测试环境缺失导致报错
 beforeAll(() => {
   if (!(globalThis as any).ResizeObserver) {
-    ;(globalThis as any).ResizeObserver = class {
-      observe() {}
-      unobserve() {}
-      disconnect() {}
+    ; (globalThis as any).ResizeObserver = class {
+      observe() { }
+      unobserve() { }
+      disconnect() { }
     }
   }
 })
 
-describe('HkDataGrid (Vitest Demo)', () => {
+describe('MDataGrid (Vitest Demo)', () => {
   const columns: DataGridColumn<User>[] = [
     { field: 'id', headerName: 'ID', width: 80 },
     { field: 'name', headerName: '姓名', width: 120 },
@@ -39,7 +39,7 @@ describe('HkDataGrid (Vitest Demo)', () => {
   ]
 
   it('renders ag-grid and displays rows', async () => {
-    const wrapper = mount(HkDataGrid, {
+    const wrapper = mount(MDataGrid, {
       props: {
         columns,
         dataSource,
@@ -70,7 +70,7 @@ describe('HkDataGrid (Vitest Demo)', () => {
   })
 
   it('renders selection column when checkbox selection enabled', async () => {
-    const wrapper = mount(HkDataGrid, {
+    const wrapper = mount(MDataGrid, {
       props: {
         columns,
         dataSource,

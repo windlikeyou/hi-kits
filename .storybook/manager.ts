@@ -3,8 +3,8 @@ import { create } from '@storybook/theming/create'
 
 const theme = create({
   base: 'light',
-  brandTitle: 'Hi-Kits',
-  brandUrl: 'https://github.com/hi-kits/hi-kits',
+  brandTitle: 'Moonwind-UI',
+  brandUrl: 'https://github.com/moonwind-ui/moonwind-ui',
   brandImage: undefined,
   brandTarget: '_self',
 

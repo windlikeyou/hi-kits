@@ -1,115 +1,94 @@
-# DataGrid 数据表格
+﻿# DataGrid 数据表格
 
 用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。
 
 ## 基础用法
 
-基础的数据表格展示用法。
+基础的表格展示用法。
 
-<preview path="./demos/data-grid-basic.vue" title="基础用法" description="基础的数据表格展示用法。"></preview>
+<preview path="../components/demos/data-grid-basic.vue" />
 
-## 分页表格
+## 分页
 
-支持分页功能的表格。
+支持分页功能。
 
-<preview path="./demos/data-grid-pagination.vue" title="分页表格" description="演示分页功能。"></preview>
+<preview path="../components/demos/data-grid-pagination.vue" />
 
-## 异步数据获取
+## 排序
 
-使用 fetch 函数异步获取数据。
+对表格进行排序，可快速查找或对比数据。
 
-<preview path="./demos/data-grid-fetch.vue" title="异步数据获取" description="使用 fetch 函数异步获取数据。"></preview>
+<preview path="../components/demos/data-grid-sort.vue" />
+
+## 筛选
+
+对表格进行筛选，可快速查找数据。
+
+<preview path="../components/demos/data-grid-filter.vue" />
 
 ## 自定义列
 
 自定义列的显示内容。
 
-<preview path="./demos/data-grid-custom.vue" title="自定义列" description="自定义列的显示内容。"></preview>
+<preview path="../components/demos/data-grid-custom.vue" />
 
-## 选择行
+## 工具栏
 
-支持多选和单选。
+显示工具栏，提供额外的操作功能。
 
-<preview path="./demos/data-grid-selection.vue" title="选择行" description="支持多选和单选。"></preview>
+<preview path="../components/demos/data-grid-toolbar.vue" />
 
-## 排序
+## 行选择
 
-支持列排序功能。
+支持行选择功能。
 
-<preview path="./demos/data-grid-sort.vue" title="排序" description="支持列排序功能。"></preview>
+<preview path="../components/demos/data-grid-selection.vue" />
 
-## 筛选
+## 远程数据
 
-支持列筛选功能。
+通过 `fetch` 属性配置远程数据获取。
 
-<preview path="./demos/data-grid-filter.vue" title="筛选" description="支持列筛选功能。"></preview>
+<preview path="../components/demos/data-grid-fetch.vue" />
 
-## API 文档
+## API
 
-### DataGrid Props
+### Props
 
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| columns | `DataGridColumn[]` | `[]` | 列配置 |
-| dataSource | `any[]` | `[]` | 数据源 |
-| height | `string \| number` | `'400px'` | 表格高度 |
-| loading | `boolean` | `false` | 加载状态 |
-| pagination | `PaginationConfig` | - | 分页配置 |
-| toolbar | `ToolbarConfig` | - | 工具栏配置 |
-| rowSelection | `RowSelectionConfig` | - | 行选择配置 |
-
-### DataGridColumn
-
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| field | `string` | - | 字段名 |
-| headerName | `string` | - | 列标题 |
-| width | `number` | `100` | 列宽度 |
-| sortable | `boolean` | `false` | 是否可排序 |
-| filter | `boolean` | `false` | 是否可筛选 |
-| hide | `boolean` | `false` | 是否隐藏 |
-| cellRenderer | `Function` | - | 自定义渲染函数 |
-
-### PaginationConfig
-
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| enabled | `boolean` | `false` | 是否启用分页 |
-| pageSize | `number` | `20` | 每页条数 |
-| showSizeChanger | `boolean` | `false` | 显示页面大小选择器 |
-| showQuickJumper | `boolean` | `false` | 显示快速跳转 |
-| showTotal | `boolean` | `false` | 显示总数信息 |
-
-### ToolbarConfig
-
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| showQuickFilter | `boolean` | `false` | 显示快速过滤 |
-| showReset | `boolean` | `false` | 显示重置按钮 |
-| showColumnToggle | `boolean` | `false` | 显示列显示控制 |
-| placement | `'top' \| 'bottom'` | `'top'` | 工具栏位置 |
+| 属性名       | 说明             | 类型               | 默认值 |
+| ------------ | ---------------- | ------------------ | ------ |
+| columns      | 列配置           | DataGridColumn[]   | []     |
+| dataSource   | 数据源           | any[]              | []     |
+| fetch        | 远程数据获取函数 | Function           |        |
+| pagination   | 分页配置         | PaginationConfig   |        |
+| rowSelection | 行选择配置       | RowSelectionConfig |        |
+| toolbar      | 工具栏配置       | ToolbarConfig      |        |
+| loading      | 加载状态         | boolean            | false  |
+| height       | 表格高度         | string / number    |        |
 
 ### Events
 
-| 事件名 | 参数 | 说明 |
-|--------|------|------|
-| row-click | `(row: any, event: Event)` | 行点击事件 |
-| row-double-click | `(row: any, event: Event)` | 行双击事件 |
-| selection-change | `(selectedRows: any[])` | 选择变化事件 |
-| sort-change | `(sortModel: any[])` | 排序变化事件 |
-| filter-change | `(filterModel: any)` | 筛选变化事件 |
+| 事件名           | 说明                 | 回调参数           |
+| ---------------- | -------------------- | ------------------ |
+| row-click        | 行点击事件           | (row: any)         |
+| selection-change | 选择项发生变化时触发 | (selection: any[]) |
+| page-change      | 页码改变时触发       | (page: number)     |
+| page-size-change | 每页条数改变时触发   | (pageSize: number) |
 
-<style scoped>
-.demo-container {
-  margin: 20px 0;
-  border: 1px solid #e1e5e9;
-  border-radius: 6px;
-  padding: 16px;
-  background: #fff;
-}
+### Methods
 
-.demo-container .hk-data-grid {
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-}
-</style>
+| 方法名          | 说明             | 参数 |
+| --------------- | ---------------- | ---- |
+| refresh         | 刷新表格数据     |      |
+| clearSelection  | 清空选择         |      |
+| getSelectedRows | 获取选中的行数据 |      |
+
+## DataGridColumn
+
+| 属性名     | 说明       | 类型    | 默认值 |
+| ---------- | ---------- | ------- | ------ |
+| field      | 列字段名   | string  |        |
+| headerName | 列标题     | string  |        |
+| width      | 列宽度     | number  |        |
+| sortable   | 是否可排序 | boolean | false  |
+| filter     | 是否可筛选 | boolean | false  |
+| hide       | 是否隐藏   | boolean | false  |

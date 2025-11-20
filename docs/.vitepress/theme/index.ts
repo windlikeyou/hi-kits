@@ -1,7 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
-import HiKits from 'hi-kits'
-import '@hi-kits/styles/dist/index.css'
+import MoonwindUI from 'moonwind-ui'
+import '@moonwind-ui/styles'
+import { h } from 'vue'
 
 // 演示预览组件
 import { ElementPlusContainer } from '@vitepress-demo-preview/component'
@@ -9,6 +10,7 @@ import '@vitepress-demo-preview/component/dist/style.css'
 
 // 自定义组件
 import ComponentShowcase from './components/ComponentShowcase.vue'
+import HomeCanvas from './components/HomeCanvas.vue'
 
 // 自定义样式
 import './custom.css'
@@ -18,9 +20,14 @@ import { initEffects } from './scroll-effects.js'
 
 export default {
   extends: DefaultTheme,
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      'home-hero-before': () => h(HomeCanvas)
+    })
+  },
   enhanceApp({ app }) {
-    // 全量安装 Hi-Kits
-    app.use(HiKits)
+    // 全量安装 moonwind-ui
+    app.use(MoonwindUI)
 
     // 注册演示预览组件
     app.component('preview', ElementPlusContainer)

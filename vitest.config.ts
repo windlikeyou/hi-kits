@@ -10,8 +10,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@hi-kits': resolve(__dirname, 'packages'),
-      'hi-kits': resolve(__dirname, 'packages/hi-kits/src')
+      '@moonwind-ui': resolve(__dirname, 'packages'),
+      'moonwind-ui': resolve(__dirname, 'packages/moonwind-ui/src')
     }
   }
 })

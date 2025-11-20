@@ -1,32 +1,34 @@
 <template>
-  <div class="demo-button">
-    <div class="demo-button-row">
-      <hi-button size="large">大型按钮</hi-button>
-      <hi-button size="medium">中等按钮</hi-button>
-      <hi-button size="small">小型按钮</hi-button>
+  <div class="button-demo">
+    <div class="demo-row">
+      <MButton size="large">大型按钮</MButton>
+      <MButton size="large" type="primary">大型按钮</MButton>
     </div>
-    <div class="demo-button-row">
-      <hi-button size="large" type="primary">大型按钮</hi-button>
-      <hi-button size="medium" type="primary">中等按钮</hi-button>
-      <hi-button size="small" type="primary">小型按钮</hi-button>
+    <div class="demo-row">
+      <MButton size="medium">中型按钮</MButton>
+      <MButton size="medium" type="primary">中型按钮</MButton>
     </div>
-    <div class="demo-button-row">
-      <hi-button size="large" type="success">大型按钮</hi-button>
-      <hi-button size="medium" type="success">中等按钮</hi-button>
-      <hi-button size="small" type="success">小型按钮</hi-button>
+    <div class="demo-row">
+      <MButton size="small">小型按钮</MButton>
+      <MButton size="small" type="primary">小型按钮</MButton>
     </div>
   </div>
 </template>
 
 <script setup>
-import { HiButton } from 'hi-kits'
+import { MButton } from "moonwind-ui";
 </script>
 
 <style scoped>
-.demo-button-row {
+.button-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-row {
   display: flex;
   gap: 12px;
-  margin-bottom: 12px;
   align-items: center;
 }
 </style>

@@ -50,6 +50,9 @@ Thumbs.db
 docs/.vitepress/cache
 docs/.vitepress/dist
 
+# Storybook
+storybook-static
+
 # Changeset
 .changeset/*.md
 !.changeset/config.json

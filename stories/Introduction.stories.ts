@@ -1,78 +1,76 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+﻿import type { Meta } from '@storybook/vue3'
 
 const meta: Meta = {
-  title: 'Introduction',
+  title: '介绍',
   parameters: {
-    layout: 'fullscreen',
-    docs: {
-      page: () => `
-        <div style="padding: 40px; font-family: 'Inter', sans-serif;">
-          <h1 style="color: #1ea7fd; margin-bottom: 24px;">Hi-Kits 组件库</h1>
-          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 32px;">
-            欢迎使用 Hi-Kits 组件库！这是一个基于 Vue 3 和 TypeScript 构建的现代化组件库。
-          </p>
-          
-          <h2 style="color: #333; margin: 32px 0 16px 0;">🚀 特性</h2>
-          <ul style="line-height: 1.8; margin-bottom: 32px;">
-            <li><strong>Vue 3 + TypeScript</strong>: 完全基于 Vue 3 Composition API 和 TypeScript 开发</li>
-            <li><strong>现代化构建</strong>: 使用 Vite 进行快速构建和开发</li>
-            <li><strong>完整的类型支持</strong>: 提供完整的 TypeScript 类型定义</li>
-            <li><strong>可定制主题</strong>: 支持主题定制和样式覆盖</li>
-            <li><strong>文档完善</strong>: 提供详细的文档和示例</li>
-            <li><strong>测试覆盖</strong>: 包含完整的单元测试</li>
-          </ul>
-
-          <h2 style="color: #333; margin: 32px 0 16px 0;">📦 安装</h2>
-          <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 32px;">
-# 使用 npm
-npm install hi-kits
-
-# 使用 yarn  
-yarn add hi-kits
-
-# 使用 pnpm
-pnpm add hi-kits
-          </pre>
-
-          <h2 style="color: #333; margin: 32px 0 16px 0;">🔧 使用方式</h2>
-          <h3 style="color: #666; margin: 24px 0 12px 0;">完整引入</h3>
-          <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
-import { createApp } from 'vue'
-import HiKits from 'hi-kits'
-import 'hi-kits/dist/style.css'
-
-const app = createApp(App)
-app.use(HiKits)
-app.mount('#app')
-          </pre>
-
-          <h3 style="color: #666; margin: 24px 0 12px 0;">按需引入</h3>
-          <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 32px;">
-import { HiButton } from 'hi-kits'
-import 'hi-kits/dist/style.css'
-          </pre>
-
-          <h2 style="color: #333; margin: 32px 0 16px 0;">🎨 组件预览</h2>
-          <p style="line-height: 1.6; margin-bottom: 32px;">
-            在左侧导航栏中选择不同的组件来查看它们的使用方式和效果。每个组件都提供了：
-          </p>
-          <ul style="line-height: 1.8; margin-bottom: 32px;">
-            <li><strong>基础用法</strong>: 展示组件的基本使用方式</li>
-            <li><strong>属性配置</strong>: 通过控制面板调整组件属性</li>
-            <li><strong>不同状态</strong>: 展示组件在不同状态下的表现</li>
-            <li><strong>代码示例</strong>: 提供完整的代码示例</li>
-          </ul>
-
-          <p style="font-size: 18px; color: #1ea7fd; text-align: center; margin-top: 48px;">
-            开始探索 Hi-Kits 组件库吧！🎉
-          </p>
-        </div>
-      `
-    }
+    layout: 'fullscreen'
   }
 }
 
 export default meta
-type Story = StoryObj<typeof meta>
 
-export const Welcome: Story = {}
+export const Introduction = {
+  render: () => ({
+    template: `
+      <div style="padding: 40px; max-width: 1200px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <h1 style="font-size: 48px; margin-bottom: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            Moonwind UI
+          </h1>
+          <p style="font-size: 20px; color: #666; margin: 0;">现代化的 Vue 3 组件库</p>
+        </div>
+
+        <h2 style="color: #333; margin: 32px 0 16px 0;">📦 安装</h2>
+        <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 32px;">
+# 使用 npm
+npm install moonwind-ui
+
+# 使用 yarn  
+yarn add moonwind-ui
+
+# 使用 pnpm
+pnpm add moonwind-ui
+        </pre>
+
+        <h2 style="color: #333; margin: 32px 0 16px 0;">🔧 使用方式</h2>
+        <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
+import { createApp } from 'vue'
+import MoonwindUI from 'moonwind-ui'
+import 'moonwind-ui/dist/style.css'
+
+const app = createApp(App)
+app.use(MoonwindUI)
+app.mount('#app')
+        </pre>
+
+        <h3 style="color: #666; margin: 24px 0 12px 0;">按需引入</h3>
+        <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 32px;">
+import { MButton } from 'moonwind-ui'
+import 'moonwind-ui/dist/style.css'
+        </pre>
+
+        <h2 style="color: #333; margin: 32px 0 16px 0;">🎨 组件预览</h2>
+        <p style="color: #666; line-height: 1.6;">
+          在左侧导航栏中选择组件查看详细文档和示例。
+        </p>
+
+        <h2 style="color: #333; margin: 32px 0 16px 0;">✨ 特性</h2>
+        <ul style="color: #666; line-height: 2;">
+          <li>🎨 精美的组件设计</li>
+          <li>📦 开箱即用的高质量组件</li>
+          <li>🔷 使用 TypeScript 编写，提供完整的类型定义</li>
+          <li>🎯 支持按需引入</li>
+          <li>📚 详细的文档和示例</li>
+          <li>🌍 国际化支持</li>
+        </ul>
+
+        <h2 style="color: #333; margin: 32px 0 16px 0;">🔗 相关链接</h2>
+        <ul style="color: #666; line-height: 2;">
+          <li><a href="https://windlikeyou.github.io/hi-kits/" target="_blank" style="color: #667eea;">在线文档</a></li>
+          <li><a href="https://github.com/windlikeyou/hi-kits" target="_blank" style="color: #667eea;">GitHub 仓库</a></li>
+          <li><a href="https://www.npmjs.com/package/moonwind-ui" target="_blank" style="color: #667eea;">npm 包</a></li>
+        </ul>
+      </div>
+    `
+  })
+}

@@ -1,17 +1,17 @@
-// 所有@use规则必须在最前面
+// All @use rules must be first
 @use './variables' as *;
-@use './mixins' as *;
 @use './tokens/variables' as *;
+@use './mixins' as *;
 
-/* Hi-Kits SCSS Entry */
+/* Moonwind-UI SCSS Entry */
 
-// 导入组件样式
-@import './components/button.scss';
-@import './components/data-grid.scss';
+// Import component styles
+@use './components/button.scss';
+@use './components/data-grid.scss';
 
 // 强制使用 CSS 变量，防止被构建工具移除
 .#{$namespace}-css-variables-force {
-  /* 这个类不会被实际使用，但确保 CSS 变量被保留 */
+  /* This class is not used, but ensures CSS variables are kept */
   color: var(--#{$namespace}-color-primary);
   background-color: var(--#{$namespace}-color-white);
   font-family: var(--#{$namespace}-font-family);

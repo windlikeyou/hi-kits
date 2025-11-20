@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { useNamespace } from '@hi-kits/hooks'
+import { useNamespace } from '@moonwind-ui/hooks'
 
 interface Props {
   visible: boolean
@@ -14,7 +14,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  text: '加载中...'
+  text: '加载�?..'
 })
 
 // 命名空间

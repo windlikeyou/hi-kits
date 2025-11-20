@@ -19,10 +19,6 @@
     "emitDeclarationOnly": true,
     "outDir": "./dist",
     "paths": {
-      "@hi-kits/styles": ["../styles/src"],
-      "@hi-kits/utils": ["../utils/src"],
-      "@hi-kits/hooks": ["../hooks/src"],
-      "@hi-kits/components": ["../components/src"],
       "@/*": ["./src/*"]
     }
   },

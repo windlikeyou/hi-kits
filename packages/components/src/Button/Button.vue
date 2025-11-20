@@ -12,10 +12,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { ButtonProps, ButtonEmits } from './types'
-import { useNamespace } from '@hi-kits/hooks';
+import { useNamespace } from '@moonwind-ui/hooks';
 
 defineOptions({
-  name: 'HiButton'
+  name: 'MButton'
 })
 
 const props = withDefaults(defineProps<ButtonProps>(), {

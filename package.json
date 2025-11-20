@@ -1,14 +1,14 @@
 {
-  "name": "hi-kits",
+  "name": "moonwind-ui",
   "version": "1.0.0",
   "description": "A modern Vue 3 component library",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "pnpm --filter docs dev",
-    "dev:with-watch": "concurrently \"pnpm --filter hi-kits dev\" \"powershell Start-Sleep 5; pnpm --filter docs dev\"",
-    "build": "pnpm build:packages && pnpm --filter hi-kits build",
-    "build:packages": "pnpm --filter @hi-kits/styles build && pnpm --filter @hi-kits/utils build && pnpm --filter @hi-kits/hooks build",
+    "dev:with-watch": "concurrently \"pnpm --filter moonwind-ui dev\" \"powershell Start-Sleep 5; pnpm --filter docs dev\"",
+    "build": "pnpm build:packages && pnpm --filter moonwind-ui build",
+    "build:packages": "pnpm --filter @moonwind-ui/styles build && pnpm --filter @moonwind-ui/utils build && pnpm --filter @moonwind-ui/hooks build && pnpm --filter @moonwind-ui/components build",
     "build:docs": "pnpm --filter docs build",
     "preview:docs": "pnpm --filter docs preview",
     "storybook": "storybook dev -p 6006",
@@ -30,7 +30,7 @@
     "ui",
     "typescript"
   ],
-  "author": "hi-kits",
+  "author": "moonwind-ui",
   "license": "MIT",
   "engines": {
     "node": ">=16.0.0",

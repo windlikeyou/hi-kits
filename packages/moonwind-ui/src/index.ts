@@ -1,14 +1,14 @@
 import type { App } from 'vue'
 
 // 导入组件
-import { HiButton, HiDataGrid } from '@hi-kits/components'
+import { MButton, MDataGrid } from '@moonwind-ui/components'
 
 // 全局安装函数
 const install = (app: App): void => {
   // 注册 Button 组件
-  app.component('HiButton', HiButton)
+  app.component('MButton', MButton)
   // 注册 DataGrid 组件
-  app.component('HiDataGrid', HiDataGrid)
+  app.component('MDataGrid', MDataGrid)
 }
 
 // 默认导出，支持全局安装
@@ -18,16 +18,16 @@ export default {
 
 // 按需导出组件
 export {
-  HiButton,
-  HiDataGrid
+  MButton,
+  MDataGrid
 }
 
 // 导出类型
-export * from '@hi-kits/components'
+export * from '@moonwind-ui/components'
 
 // 重新导出其他包的功能
-export * from '@hi-kits/hooks'
-export * from '@hi-kits/utils'
+export * from '@moonwind-ui/hooks'
+export * from '@moonwind-ui/utils'
 
 // 版本信息
 export const version = '1.0.0'

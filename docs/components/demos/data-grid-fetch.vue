@@ -1,5 +1,5 @@
 <template>
-  <HiDataGrid
+  <MDataGrid
     :columns="columns"
     :fetch="fetchData"
     :pagination="pagination"
@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { HiDataGrid } from 'hi-kits'
-import type { DataGridColumn } from 'hi-kits'
+import { MDataGrid } from 'moonwind-ui'
+import type { DataGridColumn } from 'moonwind-ui'
 
 interface User {
   id: number

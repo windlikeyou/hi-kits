@@ -1,91 +1,100 @@
-# 快速开始
+﻿# 快速开始
 
-本节将介绍如何在项目中使用 Hi-Kits。
+本节将介绍如何在项目中使用 Moonwind UI。
 
 ## 完整引入
 
-如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便。
+在 main.ts 中引入所有组件：
 
 ```typescript
-// main.ts
-import { createApp } from 'vue'
-import HiKits from 'hi-kits'
-import 'hi-kits/dist/style.css'
+import { createApp } from "vue";
+import MoonwindUI from "moonwind-ui";
+import "moonwind-ui/dist/style.css";
+import App from "./App.vue";
 
-import App from './App.vue'
-
-const app = createApp(App)
-
-app.use(HiKits)
-app.mount('#app')
+const app = createApp(App);
+app.use(MoonwindUI);
+app.mount("#app");
 ```
 
 ## 按需引入
 
-Hi-Kits 支持基于 ES modules 的 tree shaking，按需引入可以有效减少打包体积。
+Moonwind UI 支持基于 ES modules 的 tree shaking，按需引入可以有效减少打包体积。
+
+### 手动按需引入
 
 ```vue
 <template>
-  <hk-button type="primary" @click="handleClick">
-    点击我
-  </hk-button>
+  <m-button type="primary">按钮</m-button>
 </template>
 
 <script setup lang="ts">
-import { HkButton } from 'hi-kits'
-import 'hi-kits/dist/style.css'
-
-const handleClick = () => {
-  console.log('按钮被点击了！')
-}
+import { MButton } from "moonwind-ui";
+import "moonwind-ui/dist/style.css";
 </script>
 ```
 
-## 手动引入
+### 自动按需引入
 
-你也可以手动引入需要的组件。
+推荐使用 unplugin-vue-components 实现自动按需引入：
 
-```vue
-<template>
-  <hk-button type="primary">主要按钮</hk-button>
-</template>
+```typescript
+// vite.config.ts
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import Components from "unplugin-vue-components/vite";
 
-<script setup lang="ts">
-import { HkButton } from 'hi-kits'
-
-// 如果你只想引入特定组件的样式
-// import 'hi-kits/dist/components/button/style.css'
-</script>
+export default defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      // 自动导入 Moonwind UI 组件
+      resolvers: [],
+    }),
+  ],
+});
 ```
 
 ## 全局配置
 
-在引入 Hi-Kits 时，可以传入一个全局配置对象。
+在引入 Moonwind UI 时，可以传入一个全局配置对象。
 
 ```typescript
-import { createApp } from 'vue'
-import HiKits from 'hi-kits'
+import { createApp } from "vue";
+import MoonwindUI from "moonwind-ui";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(HiKits, {
+app.use(MoonwindUI, {
   // 全局配置
-  size: 'large', // 设置组件默认尺寸
-  zIndex: 2000,  // 设置弹出层的初始 z-index
-})
+  size: "default",
+  zIndex: 2000,
+});
 ```
 
 ## 开始使用
 
-现在你可以启动你的项目了。如果你是使用 Vite 创建的项目：
+现在你可以在组件中使用 Moonwind UI 了：
 
-```bash
-npm run dev
+```vue
+<template>
+  <m-button type="primary">主要按钮</m-button>
+  <m-data-grid :columns="columns" :data-source="data" />
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+
+const columns = ref([
+  { field: "name", headerName: "姓名" },
+  { field: "age", headerName: "年龄" },
+]);
+
+const data = ref([
+  { name: "张三", age: 25 },
+  { name: "李四", age: 30 },
+]);
+</script>
 ```
 
-如果一切正常，你应该能看到页面正常渲染。接下来就可以愉快地使用 Hi-Kits 开发你的应用了！
-
-## 下一步
-
-- [组件总览](/components/) - 查看所有可用组件
-- [Button 组件](/components/button) - 了解按钮组件的使用方法
+如果一切正常，你应该能看到页面正常渲染。接下来就可以愉快地使用 Moonwind UI 开发你的应用了！

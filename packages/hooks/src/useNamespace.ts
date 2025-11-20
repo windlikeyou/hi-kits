@@ -10,7 +10,7 @@ export const provideHiKitsConfig = (config: HiKitsConfig) => {
 }
 
 export const useNamespace = (block: string) => {
-  const ns = ((globalThis as any)[CONFIG_KEY]?.namespace) || 'hi'
+  const ns = ((globalThis as any)[CONFIG_KEY]?.namespace) || 'm'
   const b = () => `${ns}-${block}`
   const e = (el: string) => `${ns}-${block}__${el}`
   const m = (mod: string) => `${ns}-${block}--${mod}`

@@ -1,7 +1,7 @@
 {
-  "name": "@hi-kits/utils",
+  "name": "@moonwind-ui/utils",
   "version": "1.0.0",
-  "description": "Hi-Kits utility functions and helpers",
+  "description": "Moonwind-UI utility functions and helpers",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

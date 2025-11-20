@@ -1,18 +1,18 @@
-<template>
+﻿<template>
   <div v-if="visible" :class="[e('toolbar')]">
     <div :class="e('toolbar-left')">
       <label v-if="config?.showQuickFilter" :class="e('quick-filter')">
         <span>快速过滤：</span>
-        <input 
-          type="text" 
-          :value="quickFilterText" 
+        <input
+          type="text"
+          :value="quickFilterText"
           @input="handleQuickFilterChange"
-          placeholder="输入关键字..." 
+          placeholder="输入关键字..."
         />
       </label>
-      <button 
-        v-if="config?.showReset" 
-        :class="e('btn')" 
+      <button
+        v-if="config?.showReset"
+        :class="e('btn')"
         @click="handleReset"
       >
         重置
@@ -20,15 +20,15 @@
     </div>
     <div v-if="config?.showColumnToggle" :class="e('toolbar-right')">
       <span :class="e('label')">显示列：</span>
-      <label 
-        v-for="col in toggleableColumns" 
-        :key="col.field as string" 
+      <label
+        v-for="col in toggleableColumns"
+        :key="col.field as string"
         :class="e('checkbox')"
       >
-        <input 
-          type="checkbox" 
-          :checked="!col.hide" 
-          @change="handleToggleColumn(col)" 
+        <input
+          type="checkbox"
+          :checked="!col.hide"
+          @change="handleToggleColumn(col)"
         />
         <span>{{ col.headerName || (col.field as string) }}</span>
       </label>
@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useNamespace } from '@hi-kits/hooks'
+import { useNamespace } from '@moonwind-ui/hooks'
 import type { DataGridColumn } from '../types'
 
 interface Props {

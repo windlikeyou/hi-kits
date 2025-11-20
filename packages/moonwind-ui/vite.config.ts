@@ -20,11 +20,9 @@ export default defineConfig({
       }
     },
     rollupOptions: {
-      external: ['ag-grid-community'],
+      external: [],
       output: {
-        globals: {
-          'ag-grid-community': 'agGrid'
-        },
+        globals: {},
         // 确保样式文件被正确输出
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'style.css') return 'style.css'

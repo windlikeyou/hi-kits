@@ -7,9 +7,9 @@
     "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"],
-      "@hi-kits/styles": ["../styles/src"],
-      "@hi-kits/utils": ["../utils/src"],
-      "@hi-kits/hooks": ["../hooks/src"]
+      "@moonwind-ui/styles": ["../styles/src"],
+      "@moonwind-ui/utils": ["../utils/src"],
+      "@moonwind-ui/hooks": ["../hooks/src"]
     }
   },
   "include": [

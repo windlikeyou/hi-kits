@@ -1,15 +1,15 @@
 <template>
   <div class="button-demo">
-    <HiButton disabled>默认按钮</HiButton>
-    <HiButton type="primary" disabled>主要按钮</HiButton>
-    <HiButton type="success" disabled>成功按钮</HiButton>
-    <HiButton type="warning" disabled>警告按钮</HiButton>
-    <HiButton type="danger" disabled>危险按钮</HiButton>
+    <MButton disabled>默认按钮</MButton>
+    <MButton type="primary" disabled>主要按钮</MButton>
+    <MButton type="success" disabled>成功按钮</MButton>
+    <MButton type="warning" disabled>警告按钮</MButton>
+    <MButton type="danger" disabled>危险按钮</MButton>
   </div>
 </template>
 
 <script setup>
-import { HiButton } from 'hi-kits'
+import { MButton } from "moonwind-ui";
 </script>
 
 <style scoped>

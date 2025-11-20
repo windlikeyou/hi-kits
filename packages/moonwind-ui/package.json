@@ -1,15 +1,15 @@
 {
-  "name": "hi-kits",
+  "name": "moonwind-ui",
   "version": "1.0.0",
   "description": "A modern Vue 3 component library",
   "type": "module",
-  "main": "./dist/hi-kits.cjs",
-  "module": "./dist/hi-kits.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/hi-kits.js",
-      "require": "./dist/hi-kits.cjs",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
     "./dist/style.css": "./dist/style.css",
@@ -20,7 +20,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "vite build && vue-tsc --project tsconfig.build.json",
@@ -32,18 +33,30 @@
     "vue3",
     "component-library",
     "ui",
-    "typescript"
+    "typescript",
+    "moonwind",
+    "fengyue"
   ],
-  "author": "hi-kits",
+  "author": "fengyue",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/windlikeyou/moonwind-ui.git"
+  },
+  "homepage": "https://windlikeyou.github.io/moonwind-ui/",
+  "bugs": {
+    "url": "https://github.com/windlikeyou/moonwind-ui/issues"
+  },
   "peerDependencies": {
-    "vue": "^3.3.0",
     "ag-grid-community": "^34.0.0",
-    "ag-grid-vue3": "^34.0.0"
+    "ag-grid-vue3": "^34.0.0",
+    "vue": "^3.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
     "concurrently": "^9.2.1",
+    "rollup": "^4.52.5",
+    "rollup-plugin-dts": "^6.2.3",
     "sass-embedded": "^1.93.2",
     "typescript": "^5.9.2",
     "vite": "^5.0.12",
@@ -56,9 +69,9 @@
     "*.vue"
   ],
   "dependencies": {
-    "@hi-kits/components": "workspace:*",
-    "@hi-kits/styles": "workspace:*",
-    "@hi-kits/utils": "workspace:*",
-    "@hi-kits/hooks": "workspace:*"
+    "@moonwind-ui/components": "workspace:*",
+    "@moonwind-ui/hooks": "workspace:*",
+    "@moonwind-ui/styles": "workspace:*",
+    "@moonwind-ui/utils": "workspace:*"
   }
 }

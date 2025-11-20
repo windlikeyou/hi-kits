@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
-import { HiDataGrid } from '../packages/hi-kits/src'
-import type { DataGridColumn, FetchResult } from '../packages/hi-kits/src'
+import { MDataGrid } from '@moonwind-ui/components'
+import type { DataGridColumn, FetchResult } from '@moonwind-ui/components'
 
 // 模拟数据类型
 interface User {
@@ -87,14 +87,14 @@ const columns: DataGridColumn<User>[] = [
 // 模拟异步数据获取
 const mockFetch = async (params: any): Promise<FetchResult<User>> => {
   console.log('Fetch params:', params)
-  
+
   // 模拟网络延迟
   await new Promise(resolve => setTimeout(resolve, 1000))
-  
+
   const { current = 1, pageSize = 10 } = params
   const start = (current - 1) * pageSize
   const end = start + pageSize
-  
+
   return {
     data: mockUsers.slice(start, end),
     total: mockUsers.length,
@@ -103,9 +103,9 @@ const mockFetch = async (params: any): Promise<FetchResult<User>> => {
   }
 }
 
-const meta: Meta<typeof HiDataGrid> = {
+const meta: Meta<typeof MDataGrid> = {
   title: 'Components/DataGrid',
-  component: HiDataGrid,
+  component: MDataGrid,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -151,7 +151,7 @@ const meta: Meta<typeof HiDataGrid> = {
 }
 
 export default meta
-type Story = StoryObj<typeof HiDataGrid>
+type Story = StoryObj<typeof MDataGrid>
 
 // 基础用法
 export const Basic: Story = {
@@ -342,11 +342,11 @@ export const CustomStyle: Story = {
 export const FullFeatures: Story = {
   name: '完整功能演示',
   render: (args) => ({
-    components: { HiDataGrid },
+    components: { MDataGrid },
     setup() {
       const loading = ref(false)
       const selectedKeys = ref<number[]>([])
-      
+
       const handleFetch = async (params: any): Promise<FetchResult<User>> => {
         loading.value = true
         try {
@@ -356,12 +356,12 @@ export const FullFeatures: Story = {
           loading.value = false
         }
       }
-      
+
       const handleSelectionChange = (keys: number[], rows: User[]) => {
         selectedKeys.value = keys
         console.log('Selection changed:', { keys, rows })
       }
-      
+
       return {
         args: {
           ...args,
@@ -375,7 +375,7 @@ export const FullFeatures: Story = {
         }
       }
     },
-    template: '<HiDataGrid v-bind="args" />'
+    template: '<MDataGrid v-bind="args" />'
   }),
   args: {
     columns,

@@ -1,5 +1,5 @@
-export { default as HiButton } from './Button'
+export { default as MButton } from './Button'
 export * from './Button'
 
-export { default as HiDataGrid } from './DataGrid'
+export { default as MDataGrid } from './DataGrid'
 export * from './DataGrid'

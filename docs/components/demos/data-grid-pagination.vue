@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <HiDataGrid
+    <MDataGrid
       :columns="columns"
       :data-source="dataSource"
       :pagination="pagination"
@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import { HiDataGrid } from 'hi-kits'
-import type { DataGridColumn, PaginationConfig } from 'hi-kits'
+import { MDataGrid } from 'moonwind-ui'
+import type { DataGridColumn, PaginationConfig } from 'moonwind-ui'
 
 interface User {
   id: number

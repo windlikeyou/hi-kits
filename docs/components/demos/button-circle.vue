@@ -1,35 +1,40 @@
-<template>
-  <div class="demo-button">
-    <div class="demo-button-row">
-      <hi-button circle>+</hi-button>
-      <hi-button type="primary" circle>✓</hi-button>
-      <hi-button type="success" circle>✓</hi-button>
-      <hi-button type="warning" circle>!</hi-button>
-      <hi-button type="danger" circle>×</hi-button>
+﻿<template>
+  <div class="button-demo">
+    <div class="demo-row">
+      <MButton circle>+</MButton>
+      <MButton type="primary" circle>✓</MButton>
+      <MButton type="success" circle>✓</MButton>
+      <MButton type="warning" circle>!</MButton>
+      <MButton type="danger" circle></MButton>
     </div>
-    <div class="demo-button-row">
-      <hi-button size="large" circle>L</hi-button>
-      <hi-button size="medium" circle>M</hi-button>
-      <hi-button size="small" circle>S</hi-button>
+    <div class="demo-row">
+      <MButton size="large" circle>L</MButton>
+      <MButton size="medium" circle>M</MButton>
+      <MButton size="small" circle>S</MButton>
     </div>
-    <div class="demo-button-row">
-      <hi-button type="primary" circle disabled>D</hi-button>
-      <hi-button type="success" circle loading></hi-button>
-      <hi-button circle>📝</hi-button>
-      <hi-button type="danger" circle>🗑</hi-button>
+    <div class="demo-row">
+      <MButton type="primary" circle disabled>D</MButton>
+      <MButton type="success" circle loading></MButton>
+      <MButton circle>📝</MButton>
+      <MButton type="danger" circle>🗑</MButton>
     </div>
   </div>
 </template>
 
 <script setup>
-import { HiButton } from 'hi-kits'
+import { MButton } from 'moonwind-ui'
 </script>
 
 <style scoped>
-.demo-button-row {
+.button-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-row {
   display: flex;
   gap: 12px;
-  margin-bottom: 12px;
   align-items: center;
 }
 </style>

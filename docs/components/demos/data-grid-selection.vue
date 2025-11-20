@@ -1,7 +1,7 @@
 <template>
   <div class="demo-container">
     <div class="selection-info">
-      <p>已选择 {{ selectedKeys.length }} 行数据</p>
+      <p>已选择 {{ selectedKeys.length }} 行数</p>
       <div v-if="selectedKeys.length > 0" class="selected-items">
         <strong>选中的用户：</strong>
         <span v-for="(key, index) in selectedKeys" :key="key">
@@ -10,7 +10,7 @@
       </div>
     </div>
     
-    <HiDataGrid
+    <MDataGrid
       :columns="columns"
       :data-source="dataSource"
       :row-selection="rowSelection"
@@ -22,8 +22,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { HiDataGrid } from 'hi-kits'
-import type { DataGridColumn, RowSelectionConfig } from 'hi-kits'
+import { MDataGrid } from 'moonwind-ui'
+import type { DataGridColumn, RowSelectionConfig } from 'moonwind-ui'
 
 interface User {
   id: number

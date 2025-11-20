@@ -3,11 +3,10 @@ import { resolve } from 'path'
 import { componentPreview, containerPreview } from '@vitepress-demo-preview/plugin'
 
 export default defineConfig({
-  title: 'Hi-Kits',
+  title: 'Moonwind-UI',
   description: '基于 Vue 3 的组件库',
-  head: [
-    ['script', { src: 'https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js' }],
-  ],
+  base: '/moonwind-ui/',
+  head: [],
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/' },
@@ -42,18 +41,18 @@ export default defineConfig({
       preserveSymlinks: true,
       alias: {
         '@': resolve(__dirname, '../components/demos'),
-        '@hi-kits/styles': resolve(__dirname, '../../packages/styles'),
-        '@hi-kits/utils': resolve(__dirname, '../../packages/utils'),
-        '@hi-kits/hooks': resolve(__dirname, '../../packages/hooks')
+        '@moonwind-ui/styles': resolve(__dirname, '../../packages/styles/src'),
+        '@moonwind-ui/utils': resolve(__dirname, '../../packages/utils'),
+        '@moonwind-ui/hooks': resolve(__dirname, '../../packages/hooks'),
+        '@moonwind-ui/components': resolve(__dirname, '../../packages/components/src'),
+        'moonwind-ui': resolve(__dirname, '../../packages/moonwind-ui/src')
       }
     },
     build: {
       rollupOptions: {
-        external: ['ag-grid-community'],
+        external: [],
         output: {
-          globals: {
-            'ag-grid-community': 'agGrid'
-          }
+          globals: {}
         }
       }
     },
@@ -61,31 +60,31 @@ export default defineConfig({
       fs: {
         allow: [
           resolve(__dirname, '../../'),
-          resolve(__dirname, '../../packages/hi-kits')
+          resolve(__dirname, '../../packages/moonwind-ui')
         ]
       },
       watch: {
-        // 监听hi-kits构建产物变化，实现自动重载
-        ignored: ['!**/packages/hi-kits/dist/**']
+        // 监听moonwind-ui构建产物变化，实现自动重载
+        ignored: ['!**/packages/moonwind-ui/dist/**']
       }
     },
     optimizeDeps: {
-      include: ['hi-kits'],
+      include: ['moonwind-ui'],
     },
     ssr: {
-      noExternal: ['hi-kits'],
+      noExternal: ['moonwind-ui'],
     }
   },
-  
+
   markdown: {
     config: (md) => {
-      md.use(componentPreview, { 
+      md.use(componentPreview, {
         clientOnly: true,
         alias: {
           '@': resolve(__dirname, '../components/demos')
         }
       })
-      md.use(containerPreview, { 
+      md.use(containerPreview, {
         clientOnly: true,
         alias: {
           '@': resolve(__dirname, '../components/demos')

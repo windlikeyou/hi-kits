@@ -49,14 +49,14 @@
         <div class="card-demo" v-if="!component.comingSoon">
           <!-- Button 组件演示 -->
           <div v-if="component.name === 'Button 按钮'" class="button-demo">
-            <HiButton type="primary" size="small">主要</HiButton>
-            <HiButton type="success" size="small">成功</HiButton>
-            <HiButton type="warning" size="small">警告</HiButton>
-            <HiButton type="danger" size="small">危险</HiButton>
+            <MButton type="primary" size="small">主要</MButton>
+            <MButton type="success" size="small">成功</MButton>
+            <MButton type="warning" size="small">警告</MButton>
+            <MButton type="danger" size="small">危险</MButton>
           </div>
           <!-- DataGrid 组件演示 -->
           <div v-else-if="component.name === 'DataGrid 数据表格'" class="datagrid-demo">
-            <HiDataGrid 
+            <MDataGrid 
               :columns="dataGridColumns" 
               :dataSource="dataGridData" 
               :height="120"
@@ -104,7 +104,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRouter } from 'vitepress'
-import { HiButton, HiDataGrid } from 'hi-kits'
+import { MButton, MDataGrid } from 'moonwind-ui'
 
 const router = useRouter()
 

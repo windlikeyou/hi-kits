@@ -1,5 +1,7 @@
 @use "../variables" as *;
 
+$namespace: 'm';
+
 :root {
   // Brand
   --#{$namespace}-color-primary: #3b82f6;

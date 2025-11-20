@@ -1,7 +1,7 @@
 {
-  "name": "@hi-kits/hooks",
+  "name": "@moonwind-ui/hooks",
   "version": "1.0.0",
-  "description": "Hi-Kits Vue composition functions and hooks",
+  "description": "Moonwind-UI Vue composition functions and hooks",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
