@@ -9,6 +9,7 @@
       "@moonwind-ui/hooks": ["../packages/hooks/src"],
       "@moonwind-ui/utils": ["../packages/utils/src"],
       "@moonwind-ui/styles": ["../packages/styles/src"],
+      "@moonwind-ui/icons": ["../packages/icons/src/index.ts"],
       "moonwind-ui": ["../packages/moonwind-ui/src/index.ts"]
     }
   }

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*", "scripts/**/*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "types": ["node"]
+  }
+}

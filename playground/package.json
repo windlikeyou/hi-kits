@@ -15,6 +15,7 @@
   "devDependencies": {
     "@moonwind-ui/components": "workspace:*",
     "@moonwind-ui/hooks": "workspace:*",
+    "@moonwind-ui/icons": "workspace:*",
     "@moonwind-ui/styles": "workspace:*",
     "@moonwind-ui/utils": "workspace:*",
     "@vitejs/plugin-vue": "^5.0.3",

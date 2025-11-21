@@ -13,11 +13,26 @@
     </div>
 
     <div class="card">
+      <h2>Icons Demo</h2>
+      <div class="row icons">
+        <IconCheck />
+        <IconClose />
+        <IconLoading />
+        <IconSearch />
+        <IconPlus />
+        <IconMinus />
+        <IconEdit />
+        <IconDelete />
+      </div>
+    </div>
+
+    <div class="card">
       <h2>DataGrid Demo</h2>
       <MDataGrid
         :columns="columns"
         :data-source="dataSource"
         height="300px"
+        side-bar="columns"
       />
     </div>
   </div>
@@ -25,6 +40,7 @@
 
 <script setup lang="ts">
 import { MButton, MDataGrid } from 'moonwind-ui'
+import { IconCheck, IconClose, IconLoading, IconSearch, IconPlus, IconMinus, IconEdit, IconDelete } from '@moonwind-ui/icons'
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 80 },
@@ -76,5 +92,14 @@ h2 {
   margin-bottom: 20px;
   color: #374151;
   font-size: 1.2rem;
+}
+
+.icons {
+  color: #4b5563;
+}
+
+.m-icon {
+  width: 24px;
+  height: 24px;
 }
 </style>

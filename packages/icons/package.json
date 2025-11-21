@@ -1,0 +1,36 @@
+{
+  "name": "@moonwind-ui/icons",
+  "version": "1.0.0",
+  "description": "Icons for Moonwind UI",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc --project tsconfig.build.json",
+    "generate": "esno scripts/generate.ts",
+    "dev": "vite build --watch"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.3",
+    "esno": "^4.0.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vue": "^3.4.15",
+    "vue-tsc": "^2.0.0"
+  }
+}
